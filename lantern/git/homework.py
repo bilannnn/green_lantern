@@ -48,11 +48,10 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    dob = first_value*second_value
-    if not type(dob) is int:
-        raise TypeError
+    if isinstance(first_value, int) and isinstance(second_value, int):
+        return first_value*second_value
     else:
-        return dob
+        raise TypeError
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -105,21 +104,15 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    if word in text:
-        return True
-    else:
-        return False
+    return word in text
+    
 
 
 def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    list_1 = []
-    for i in range(13):
-        if  i != 6 and  i != 7:
-            list_1.append(i)
-    return list_1
+    return [i for i in range(13) if i != 6 and i != 7]
 
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -131,11 +124,7 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    list_1 = []
-    for i in data:
-        if i > 0:
-            list_1.append(i)
-    return list_1
+    return [i for i in data if i > 0]
 
 
 
@@ -148,10 +137,7 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    dict = {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h', 9: 'i', 10: 'j', 11: 'k', 12: 'l',
-            13: 'm', 14: 'n', 15: 'o', 16: 'p', 17: 'q', 18: 'r', 19: 's', 20: 't', 21: 'u', 22: 'v', 23: 'w',
-            24: 'x', 25: 'y', 26: 'z'}
-    return dict
+    return {i: chr(i + 96) for i in range(1, 27)}
 
 
 def simple_sort(data: List[int]) -> List[list]:
@@ -161,4 +147,10 @@ def simple_sort(data: List[int]) -> List[list]:
         simple_sort([2, 9, 6, 7, 3, 2, 1])
         >>> [1, 2, 2, 3, 6, 7, 9]
     """
-    return sorted(data)
+    chek = 1
+    while chek < len(data):
+        for i in range(len(data) - chek):
+            if data[i] > data[i + 1]:
+                data[i], data[i + 1] = data[i + 1], data[i]
+        chek += 1
+    return data
