@@ -39,6 +39,7 @@ class Cat:
     """
 
     def __init__(self, age):
+
         self.age = age
         self.average_speed = self._set_average_speed()
         self.saturation_level = 50
@@ -85,8 +86,8 @@ class Cat:
     def get_average_speed(self):
         return self.average_speed
 
-
 class Cheetah(Cat):
+
     """
     * Inherit from class Cat
 
@@ -100,6 +101,7 @@ class Cheetah(Cat):
       if age grosser 15(not including) return 40
 
     """
+
 
     def eat(self, product):
         products = {
@@ -134,6 +136,7 @@ class Wall:
     """
 
     def __init__(self, width, height):
+
         self.width = width
         self.height = height
 
@@ -182,6 +185,7 @@ class Window:
        * Implement method window_square which return result of simple square formula of rectangle
 
     """
+
 
     def __init__(self, width, height):
         self.width = width

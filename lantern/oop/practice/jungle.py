@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+
 from abc import ABC, abstractmethod
+
 from typing import List
 
 
 class Jungle:
+
     def __init__(self, predators: List[Predator], herbivorous: List[Herbivorous]):
         self.predators = predators
         self.herbivorous = herbivorous
@@ -14,6 +17,7 @@ JUNGLE = Jungle(predators=[], herbivorous=[])
 
 
 class Animal(ABC):
+
     def __init__(self, weight, speed):
         self.weight = weight
         self.speed = speed
@@ -50,6 +54,7 @@ class Herbivorous(Animal):
 
 
 if __name__ == "__main__":
+
     # testing predator's possibility to hunt herbivorous
 
     simba = Predator(weight=100, speed=100, power=70)
@@ -60,6 +65,7 @@ if __name__ == "__main__":
     try:
         print(simba.hunt())
     except AttributeError:
+
         print("Method hunt is hidden")
     # end of testing
 
@@ -73,3 +79,4 @@ if __name__ == "__main__":
         print("All is OK")
     else:
         print("Something goes wrong. Animal should be abstract")
+
