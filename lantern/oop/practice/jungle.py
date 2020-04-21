@@ -1,4 +1,6 @@
 from __future__ import annotations
+
+
 from abc import ABC, abstractmethod
 
 from typing import List
@@ -52,26 +54,29 @@ class Herbivorous(Animal):
 
 
 if __name__ == "__main__":
-    # test if predator can hunt herbicorous
+
+    # testing predator's possibility to hunt herbivorous
+
     simba = Predator(weight=100, speed=100, power=70)
     timon = Herbivorous(weight=10, speed=114)
+
     JUNGLE.predators.append(simba)
     JUNGLE.herbivorous.append(timon)
     try:
         print(simba.hunt())
     except AttributeError:
-        print('hunt is hidden')
-    else:
-        print('something wrong')
-    # end of test
 
-    # test of eat method
+        print("Method hunt is hidden")
+    # end of testing
+
+    #  testing eat method
     print(simba.eat())
 
-    # test animal fo abstract class
+    # test animal of abstract class
     try:
         animal = Animal(weight=5, speed=10)
     except TypeError:
-        print('it`s ok')
+        print("All is OK")
     else:
-        print('something goes wrong')
+        print("Something goes wrong. Animal should be abstract")
+
