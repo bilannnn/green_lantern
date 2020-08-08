@@ -231,7 +231,7 @@ class Door:
         try:
             return self.door_square() * materials[material]
         except KeyError:
-            raise ValueError('Sorry we don\'t have such material')
+            raise ValueError('Sorry we do not have such material')
 
     def update_wood_price(self, new_price):
         Door.wood_price = new_price
