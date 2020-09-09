@@ -8,8 +8,8 @@ class Config:
     HOST = 'localhost'
     PORT = 5000
     SECRET_KEY = 'aa01018c-c962-46c4-8087-c229c7e36c59'
-    PG_USER = "cursor"
-    PG_PASSWORD = "very_secret_password"
+    PG_USER = "cuursor"
+    PG_PASSWORD = "password"
     PG_HOST = "localhost"
     PG_PORT = 5432
     DB_NAME = "cursor_sqlalchemy_db"
